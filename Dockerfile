@@ -20,4 +20,5 @@ RUN npm run build
 EXPOSE 8000
 
 # Start the backend server
+WORKDIR /app/backend
 CMD ["npm", "start"]
