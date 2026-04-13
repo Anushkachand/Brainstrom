@@ -5,17 +5,15 @@ FROM node:18-alpine
 WORKDIR /app
 
 # Backend setup
-COPY backend/package*.json backend/
+COPY backend/ ./backend/
 WORKDIR /app/backend
 RUN npm install
-COPY backend/ .
 
 # Frontend setup
 WORKDIR /app
-COPY frontend/package*.json frontend/
+COPY frontend/ ./frontend/
 WORKDIR /app/frontend
 RUN npm install
-COPY frontend/ .
 RUN npm run build
 
 # Expose the port
